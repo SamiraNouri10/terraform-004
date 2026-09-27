@@ -2,17 +2,21 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 5.0"
+      version = "~> 6.26"
     }
   }
 
-  required_version = ">= 1.3.0"
+  required_version = ">= 1.14.2"
+}
+
+provider "aws" {
+  region = "us-east-2"
 }
 
 resource "aws_instance" "lab_04" {
   # This is an Ubuntu 24.04 instance. 
   ami           = "ami-0f5fcdfbd140e4ab7"
-  instance_type = "t3.micro"
+  instance_type = "t2.micro"
   vpc_security_group_ids = [
     aws_security_group.allow_ssh.id,
     aws_security_group.allow_tls.id
