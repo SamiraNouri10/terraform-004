@@ -16,7 +16,7 @@ provider "aws" {
 resource "aws_instance" "lab_04" {
   # This is an Ubuntu 24.04 instance. 
   ami           = "ami-0f5fcdfbd140e4ab7"
-  instance_type = "t2.micro"
+  instance_type = "t3.micro"
   vpc_security_group_ids = [
     aws_security_group.allow_ssh.id,
     aws_security_group.allow_tls.id
