@@ -25,14 +25,14 @@ resource "aws_instance" "lab_04" {
   ]
 
   tags = {
-    Name      = "Lab-04"
+    Name = "Lab-04"
   }
 }
 
 resource "aws_security_group" "allow_ssh" {
   name        = "allow_ssh"
   description = "Allow SSH inbound traffic and all outbound traffic"
-  
+
   tags = {
     Name = "allow_ssh"
   }
@@ -49,7 +49,7 @@ resource "aws_vpc_security_group_ingress_rule" "allow_ssh_ipv4" {
 resource "aws_security_group" "allow_tls" {
   name        = "allow_tls"
   description = "Allow TLS inbound traffic and all outbound traffic"
-  
+
   tags = {
     Name = "allow_tls"
   }
